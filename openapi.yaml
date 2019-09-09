@@ -1,0 +1,34 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "containerized-api"
+
+schemes:
+- "http"
+paths:
+  "/good-api":
+    get:
+      operationId: "good-api"
+      responses:
+        200:
+          description: "good response api"
+          schema:
+            type: "string"
+  "/error-api":
+    get:
+      operationId: "error-api"
+      responses:
+        200:
+          description: "Error response api"
+          schema:
+            type: "string"
+  "/slow-api":
+    get:
+      operationId: "slow-api"
+      responses:
+        200:
+          description: "Slow response api"
+          schema:
+            type: "string"
+
+host: "containerized-api.endpoints.cloud-endpoint-gke.cloud.goog"

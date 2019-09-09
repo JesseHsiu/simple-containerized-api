@@ -13,6 +13,14 @@ spec:
         app: containerized-api
     spec:
       containers:
+      - name: esp-containerized-api
+        image: gcr.io/endpoints-release/endpoints-runtime:1
+        args: [
+          "--http_port", "5001",
+          "--backend", "127.0.0.1:5000",
+          "--service", "containerized-api.endpoints.cloud-endpoint-gke.cloud.goog",
+          "--rollout_strategy", "managed",
+        ]
       - name: containerized-api
         image: gcr.io/cloud-endpoint-gke/simple-containerized-api:latest
         ports:
